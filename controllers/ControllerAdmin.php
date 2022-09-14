@@ -24,4 +24,3 @@ class ControllerAdmin extends Controller {
         echo $twig->render('adminUserManagement.twig',['reqcount' => $countbooking, 'base' => self::$_base]);
     }
 }
-//last push
