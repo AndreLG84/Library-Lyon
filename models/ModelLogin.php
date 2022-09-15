@@ -16,7 +16,7 @@ class ModelLogin extends Model {
                     $user = new User($users);
                     header('Location:/Library-Lyon-Andre');
                 }else {
-                    echo  'Erreur login_admin/password';
+                    echo  'Erreur login_user/password';
                 }
                 
             }
