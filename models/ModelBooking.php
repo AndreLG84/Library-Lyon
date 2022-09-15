@@ -50,7 +50,7 @@
                 // var_dump($data);
                 if($data ==! null){
                     // var_dump($data);
-                    $selectnumber = $db->prepare('SELECT `book`.`id_book`, `title`, `isbn_number`, `user`.`id_user`, `firstname`, `lastname`, `user_number`, `id_booking`, `booking_number`, `copy`.`id_copy`, `copy`.`condition` FROM `booking` INNER JOIN `user` ON `booking`.`id_user` = `user`.`id_user` INNER JOIN `book` ON `booking`.`id_book` = `book`.`id_book` INNER JOIN `copy` ON `copy`.`id_copy` = `booking`.`id_copy` WHERE `user`.`user_number` LIKE :search');
+                    $selectnumber = $db->prepare('SELECT `book`.`id_book`, `title`, `isbn_number`, `user`.`id_user`, `firstname`, `lastname`, `user_number`, `id_booking`, `booking_number`, `copy`.`id_copy`, `copy`.`condition` FROM `booking` INNER JOIN `user` ON `booking`.`id_user` = `user`.`id_user` INNER JOIN `book` ON `booking`.`id_book` = `book`.`id_book` INNER JOIN `copy` ON `copy`.`id_book` = `booking`.`id_book` WHERE `user`.`user_number` LIKE :search');
 
                     $selectnumber->bindParam('search', $data, PDO::PARAM_STR);
 
@@ -58,7 +58,7 @@
                 }
             } else {
 
-                $selectnumber = $db->query('SELECT `book`.`id_book`, `title`, `isbn_number`, `user`.`id_user`, `firstname`, `lastname`, `user_number`, `id_booking`, `booking_number`, `copy`.`id_copy`, `copy`.`condition` FROM `booking` INNER JOIN `user` ON `booking`.`id_user` = `user`.`id_user` INNER JOIN `book` ON `booking`.`id_book` = `book`.`id_book` INNER JOIN `copy` ON `copy`.`id_copy` = `booking`.`id_copy`');
+                $selectnumber = $db->query('SELECT `book`.`id_book`, `title`, `isbn_number`, `user`.`id_user`, `firstname`, `lastname`, `user_number`, `id_booking`, `booking_number`, `copy`.`id_copy`, `copy`.`condition` FROM `booking` INNER JOIN `user` ON `booking`.`id_user` = `user`.`id_user` INNER JOIN `book` ON `booking`.`id_book` = `book`.`id_book` INNER JOIN `copy` ON `copy`.`id_book` = `booking`.`id_book`');
 
             }
 

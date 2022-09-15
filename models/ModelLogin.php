@@ -14,7 +14,7 @@ class ModelLogin extends Model {
                 if($req->rowCount()> 0 && $users['password']==$password){
                     $_SESSION['userId'] = $users['id_user'];
                     $user = new User($users);
-                    header('Location:/Library-Lyon');
+                    header('Location:/Library-Lyon-Andre');
                 }else {
                     echo  'Erreur login_admin/password';
                 }
@@ -39,7 +39,7 @@ class ModelLogin extends Model {
                 if($req->rowCount()> 0 && $admins['password']==$password){
                     $_SESSION['userId'] = $admins['id_admin'];
                     $admin = new Admin($admins);
-                   header('Location:/Library-Lyon/admin');
+                   header('Location:/Library-Lyon-Andre/admin');
                    
                 }else {
                     echo  'Erreur login_admin/password';
